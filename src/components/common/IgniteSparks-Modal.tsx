@@ -1,14 +1,9 @@
 "use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import EveryDonationRipple from "../pages/everyDonation";
 import FuelingTransformation from "../pages/Fueling-Transformation";
-// import CustomInput from "./custom-input";
-// import CustomSelect from "./custom-select";
-// import EveryDonationRipple from "../pages/everyDonation";
-// import FuelingTransformation from "../pages/Fueling-Transformation";
 
 interface DonationModalProps {
   isOpen: boolean;
@@ -20,88 +15,6 @@ const IgniteSparksDonationModal: React.FC<DonationModalProps> = ({ isOpen, onClo
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const [isIndividual, setIsIndividual] = useState(true);
-  // const [amount, setAmount] = useState<number | null>(50);
-  // const [customAmount, setCustomAmount] = useState<string>("");
-
-  const [isCoreValuesActive, setIsCoreValuesActive] = useState<boolean>(false);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeContent, setActiveContent] = useState({
-    title: "",
-    description: "",
-  });
-
-
-  // const [formData, setFormData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   email: "",
-  //   phoneNumber: "",
-  //   address: "",
-  //   address2: "",
-  //   city: "",
-  //   state: "",
-  //   zipCode: "",
-  //   businessName: "",
-  // });
-  // const [paymentMethod, setPaymentMethod] = useState<
-  //   "creditCard" | "bankAccount"
-  // >("creditCard");
-
-  // const [errors, setErrors] = useState<Record<string, string>>({});
-
-  // const validateField = (name: string, value: string) => {
-  //   if (!value.trim() && name !== "phoneNumber" && name !== "address2") {
-  //     return `${name.replace(/([A-Z])/g, " $1")} is required`;
-  //   }
-  //   if (name === "email" && !/\S+@\S+\.\S+/.test(value)) {
-  //     return "Enter a valid email address";
-  //   }
-  //   return "";
-  // };
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({ ...prev, [name]: value }));
-  //   setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
-  // };
-
-  // const handleAmountChange = (value: number) => {
-  //   setAmount(value);
-  //   setCustomAmount("");
-  // };
-
-  // const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const value = e.target.value;
-  //   setCustomAmount(value);
-  //   setAmount(value ? parseFloat(value) : null);
-  // };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   console.log("Form Data:", formData);
-  //   console.log("Amount:", amount);
-  //   console.log("Custom Amount:", customAmount);
-
-  //   const newErrors: Record<string, string> = {};
-  //   let hasError = false;
-
-  //   Object.entries(formData).forEach(([key, value]) => {
-  //     const error = validateField(key, value);
-  //     if (error) hasError = true;
-  //     newErrors[key] = error;
-  //   });
-
-  //   setErrors(newErrors);
-
-  //   if (!hasError) {
-  //     console.log("Donation Submitted:", { formData, amount, paymentMethod });
-  //     onClose();
-  //   }
-  // };
 
   useEffect(() => {
     if (isOpen) {
@@ -136,9 +49,12 @@ const IgniteSparksDonationModal: React.FC<DonationModalProps> = ({ isOpen, onClo
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  const handleCardClick = () => {
+    // Modal handling logic can be added here if needed in future
+  };
 
   if (!isOpen) return null;
+
   return createPortal(
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9999]">
       <div
@@ -167,202 +83,32 @@ const IgniteSparksDonationModal: React.FC<DonationModalProps> = ({ isOpen, onClo
         </h2>
         <h2 className="w-full lg:max-w-2xl text-white text-1xl lg:text-1xl text-center mb-6 leading-[3rem] lg:leading-[2rem]">Your Donation Makes An Immediate Impact</h2>
 
-
         <div className="flex mb-6 bg-gray-200 px-1 py-1 rounded-full">
           <button
             onClick={() => setIsIndividual(true)}
-            className={`px-4 py-2 rounded-full ${isIndividual ? "bg-[#202020] text-white" : "bg-gray-200"
-              }`}
+            className={`px-4 py-2 rounded-full ${isIndividual ? "bg-[#202020] text-white" : "bg-gray-200"}`}
           >
             Every Dollar Sparks Hope $1 To $50
           </button>
           <button
             onClick={() => setIsIndividual(false)}
-            className={`px-4 py-2 rounded-full ${!isIndividual ? "bg-[#202020] text-white" : "bg-gray-200"
-              }`}
+            className={`px-4 py-2 rounded-full ${!isIndividual ? "bg-[#202020] text-white" : "bg-gray-200"}`}
           >
             Fueling Transformation $200 To $3,000
           </button>
         </div>
 
-        {
-          isIndividual && (
-            <EveryDonationRipple
-              isCoreActive={isCoreValuesActive}
-              onCardClick={(content) => {
-                setActiveContent(content);
-                setIsModalOpen(true);
-              }}
-            />
-
-          )
-
-        }
-
-        {!isIndividual && (
+        {isIndividual ? (
+          <EveryDonationRipple
+            isCoreActive={false}
+            onCardClick={handleCardClick}
+          />
+        ) : (
           <FuelingTransformation
-            isCoreActive={isCoreValuesActive}
-            onCardClick={(content) => {
-              setActiveContent(content);
-              setIsModalOpen(true);
-            }}
+            isCoreActive={false}
+            onCardClick={handleCardClick}
           />
-
-        )
-        }
-
-
-
-        {/* <form
-          className="w-full max-w-4xl space-y-8 mt-5"
-          onSubmit={handleSubmit}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <CustomInput
-              id="firstName"
-              label="First Name *"
-              type="text"
-              value={formData.firstName}
-              placeholder="John"
-              errorMessage={errors.firstName}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-            <CustomInput
-              id="lastName"
-              label="Last Name *"
-              type="text"
-              value={formData.lastName}
-              placeholder="Doe"
-              errorMessage={errors.lastName}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-          </div>
-          {!isIndividual && (
-            <CustomInput
-              id="businessName"
-              label="Business Name *"
-              type="text"
-              value={formData.businessName}
-              placeholder="Your Business Name"
-              errorMessage={errors.businessName}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-          )}
-          <div className="grid grid-cols-1 md:grid-cols-2 space-y-8 md:space-y-0 md:gap-8">
-            <CustomInput
-              id="email"
-              label="Email *"
-              type="email"
-              value={formData.email}
-              placeholder="john@doe.com"
-              errorMessage={errors.email}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-            <CustomInput
-              id="phoneNumber"
-              label="Phone Number"
-              type="text"
-              value={formData.phoneNumber}
-              placeholder="123-456-7890"
-              errorMessage={errors.phoneNumber}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-          </div>
-          <CustomInput
-            id="address"
-            label="Address *"
-            type="text"
-            value={formData.address}
-            placeholder="123 Main St"
-            errorMessage={errors.address}
-            onChange={handleChange}
-            isWhiteTheme
-          />
-          <CustomInput
-            id="address2"
-            label="Address 2"
-            type="text"
-            value={formData.address2 || ""}
-            placeholder="Apartment, suite, etc."
-            errorMessage={errors.address2}
-            onChange={handleChange}
-            isWhiteTheme
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 space-y-8 md:space-y-0 md:gap-8">
-            <CustomInput
-              id="city"
-              label="City *"
-              type="text"
-              value={formData.city}
-              placeholder="City"
-              errorMessage={errors.city}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-            <CustomSelect
-              id="state"
-              label="State/Province *"
-              value={formData.state}
-              options={[
-                { label: "State 1", value: "State 1" },
-                { label: "State 2", value: "State 2" },
-                // Add more options as necessary
-              ]}
-              errorMessage={errors.state}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-            <CustomInput
-              id="zipCode"
-              label="Zip/Postal Code *"
-              type="text"
-              value={formData.zipCode}
-              placeholder="12345"
-              errorMessage={errors.zipCode}
-              onChange={handleChange}
-              isWhiteTheme
-            />
-          </div>
-          <div className="mt-6 text-white">
-            <h3 className="text-lg font-bold mb-4">
-              Select your payment method
-            </h3>
-            <div className="flex gap-4">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="creditCard"
-                  checked={paymentMethod === "creditCard"}
-                  onChange={() => setPaymentMethod("creditCard")}
-                />
-                Credit Card
-              </label>
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="bankAccount"
-                  checked={paymentMethod === "bankAccount"}
-                  onChange={() => setPaymentMethod("bankAccount")}
-                />
-                Bank Account
-              </label>
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className="mt-4 border border-white text-white text-lg py-2 px-6 rounded-full hover:bg-white hover:text-black transition-colors"
-          >
-            Donate
-          </button>
-        </form> */}
+        )}
 
         <button
           onClick={onClose}
