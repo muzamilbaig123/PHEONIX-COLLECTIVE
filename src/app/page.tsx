@@ -22,6 +22,8 @@ import MissionSection from "@/components/pages/mission-statement";
 import Modal from "@/components/shared/modal";
 import { useSwiperContext } from "@/utils/use-swiper-context";
 import IgniteSparksDonation from "@/components/pages/Ignite-Sparks";
+import Testimonials from "@/components/pages/testimonials";
+import RecurringDonations from "@/components/pages/Recurring-Donations";
 
 const Home: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperInstance | null>(
@@ -87,6 +89,7 @@ const Home: React.FC = () => {
       ease: "power3.inOut",
     });
   };
+
 
   const handleSlideChange = (swiper: SwiperInstance): void => {
     const activeIndex = swiper.activeIndex;
@@ -205,9 +208,8 @@ const Home: React.FC = () => {
               )}
 
               <div
-                className={`absolute inset-0 rounded-full border-[2px] border-white border-opacity-80 ${
-                  showBeginButton ? "animate-spin-slow" : ""
-                }`}
+                className={`absolute inset-0 rounded-full border-[2px] border-white border-opacity-80 ${showBeginButton ? "animate-spin-slow" : ""
+                  }`}
               ></div>
               <div className="absolute inset-1 rounded-full border-[1px] border-white opacity-50"></div>
               <div className="absolute inset-2 rounded-full border-[1px] border-white opacity-30"></div>
@@ -229,9 +231,8 @@ const Home: React.FC = () => {
         <>
           <div className="absolute inset-0 bg-black opacity-40 pointer-events-none z-10 overflow-hidden"></div>
           <div
-            className={`absolute inset-0 transition-opacity duration-500  ${
-              isVideoVisible ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-500  ${isVideoVisible ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
           >
             <video
               className="w-full h-full object-cover"
@@ -300,7 +301,7 @@ const Home: React.FC = () => {
                 <ValuesShapeSection isActive={isValuesShapeActive} />
               </SwiperSlide>
 
-              {/* lastly add */}
+              {/* Ignite Spark */}
 
               <SwiperSlide>
                 <IgniteSparksDonation
@@ -308,6 +309,28 @@ const Home: React.FC = () => {
                   navigateToSlide={handleCustomNavigation}
                 />
               </SwiperSlide>
+
+              {/* testimonials */}
+
+              <SwiperSlide>
+                <Testimonials
+                  isCoreActive={isCoreValuesActive}
+                  onCardClick={(content) => {
+                    setActiveContent(content);
+                    setIsModalOpen(false);
+                  }}
+                />
+              </SwiperSlide>
+
+              {/* Recurring Donations */}
+
+              <SwiperSlide>
+                <RecurringDonations
+                  isActive={isValuesActive}
+                  navigateToSlide={handleCustomNavigation}
+                />
+              </SwiperSlide>
+
 
             </Swiper>
 
@@ -329,7 +352,7 @@ const Home: React.FC = () => {
                     if (
                       swiperInstance &&
                       swiperInstance.activeIndex <
-                        swiperInstance.slides.length - 1
+                      swiperInstance.slides.length - 1
                     ) {
                       handleCustomNavigation(swiperInstance.activeIndex + 1);
                     }

@@ -31,6 +31,35 @@ export const CoreData = [
   },
 ];
 
+export const Testimonilas = [
+  {
+    id: 1,
+    title: `"Your letters bring me to tears as I often feel alone."`,
+    description:
+      "— A mother of two daughters working to become a psychologist in the US Midwest",
+  },
+  {
+    id: 2,
+    title: `"We are so thankful to you; there are no words to say. We are family. Blood family shut us out when we needed help, but God sent us Angels and family at once."`,
+    description:
+      "— A man rebuilding his life in South Africa",
+  },
+  {
+    id: 3,
+    title: `"Once again, thank you for the remarkable kindness and the light you bring to the lives of those you help."`,
+    description:
+      "— A partial orphan in Kenya pursuing higher education for himself and his twin brother",
+  },
+  {
+    id: 4,
+    title: `"Thank you so much for everything you’ve done for me; it feels like a weight lifted off my shoulders."`,
+    description:
+      "— A student graduating from medical school in Nigeria",
+  },
+
+];
+
+
 export const CultureData = [
   {
     id: 1,
