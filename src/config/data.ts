@@ -3,13 +3,13 @@ export const CoreData = [
     id: 1,
     title: "Kindness and Compassion",
     description:
-      "At the heart of The Phoenix Collective is an unwavering commitment to kindness. We believe in treating every individual with compassion, seeingtheir struggles not as weaknesses but as opportunities for growth. In everyinteraction—whether it be with those we serve, our donors, or among ourselves—weprioritize empathy and understanding. Our culture fosters a safe and nurturingenvironment where all feel valued and supported.",
+      "At the heart of The Phoenix Collective is an unwavering commitment to kindness. We believe in treating every individual with compassion, seeingtheir struggles not as weaknesses but as opportunities for growth. In everyinteraction—whether it be with those we serve, our donors, or among ourselves we prioritize empathy and understanding. Our culture fosters a safe and nurturingenvironment where all feel valued and supported.",
   },
   {
     id: 2,
     title: "Transformation & Growth",
     description:
-      "Transformation is not just our goal—it is our promise. Webelieve in the power of individuals to rebuild themselves, stronger and more resilient. Whether through small acts of kindness or comprehensive support, we are dedicated to helping people rise from their struggles and become the best versions of themselves.Every program, decision, and interaction is designed with personal growth in mind, ensuring that those who seek help can find the fire within to reignite their lives.",
+      "Transformation is not just our goal—it is our promise. We believe in the power of individuals to rebuild themselves, stronger and more resilient. Whether through small acts of kindness or comprehensive support, we are dedicated to helping people rise from their struggles and become the best versions of themselves.Every program, decision, and interaction is designed with personal growth in mind, ensuring that those who seek help can find the fire within to reignite their lives.",
   },
   {
     id: 3,

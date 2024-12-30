@@ -33,7 +33,7 @@ export const EveryData = [
         id: 50,
         title: "A Pathway to Hope",
         description:
-            " Help pay for utilities, ensuring stability for a struggling family.",
+            "Help pay for utilities, ensuring stability for a struggling family.",
     },
 ];
 

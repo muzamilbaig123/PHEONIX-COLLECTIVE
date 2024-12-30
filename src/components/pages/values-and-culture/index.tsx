@@ -84,7 +84,7 @@ const ValuesSection = ({
       <div className="flex flex-col gap-y-6 items-center justify-center">
         <h1
           ref={headingRef}
-          className="lg:text-4xl text-xl capitalize font-cambria text-[#f3c60c] max-w-xl text-center"
+          className="lg:text-[33px] lg:leading-10 text-xl capitalize font-cambria text-[#f3c60c] max-w-xl text-center"
         >
           {"Values and Culture of the Phoenix Collective"
             .split("")
