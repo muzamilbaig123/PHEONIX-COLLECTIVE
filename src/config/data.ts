@@ -92,3 +92,39 @@ export const CultureData = [
       "We are driven by the belief that everyone has the potential to create a better version of themselves. Whether it is through a small act that rekindles hope or a detailed roadmap that guides them through a longer transformation, The Phoenix Collective exists to help people rise from their own ashes. We do not offer a one-size-fits-all solution because we believe in the unique power and magic that each individual holds. Our culture is one of hope, action, and belief in the power of human potential.",
   },
 ];
+
+
+
+// choose your monthly gifts
+export const MonthlyGifts = [
+  {
+    id: 10,
+    title: "$10/month – A Flicker of Light",
+    description:
+      "Provide school supplies or internet access for someone every month. ",
+  },
+  {
+    id: 25,
+    title: "$25/month – A Steady Flame",
+    description:
+      "Provide groceries or help cover medical needs like prescriptions.",
+  },
+  {
+    id: 50,
+    title: "$50/month – A Pathway Forward",
+    description:
+      "Sustain rent or utilities for someone rebuilding their life ",
+  },
+  {
+    id: 100,
+    title: "$100/month – Igniting Independence",
+    description:
+      "Empower someone to launch a business or gain stability.",
+  },
+  {
+    id: "",
+    title: "Custom Amount – Blaze Your Trail",
+    description:
+      "Choose a monthly amount that reflects your commitment to renewal.",
+  },
+];

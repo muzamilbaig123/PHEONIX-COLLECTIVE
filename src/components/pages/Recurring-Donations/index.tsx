@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Button from "@/components/common/button";
-import IgniteSparksDonationModal from "@/components/common/IgniteSparks-Modal";
+import RecurringDonationModal from "@/components/common/RecurringDonation-Modal";
 
 const RecurringDonations = ({
   isActive,
@@ -125,7 +125,7 @@ const RecurringDonations = ({
       </Button>
 
       {/* Donation Modal */}
-      <IgniteSparksDonationModal
+      <RecurringDonationModal
         isOpen={isDonationModalOpen} // State ke basis par modal render hoga
         onClose={closeDonationModal} // Modal close karne ka function
       />
