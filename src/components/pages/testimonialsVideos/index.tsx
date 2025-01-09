@@ -386,17 +386,17 @@ const TestimonialsVideos = () => {
   const videos = [
     {
       id: 1,
-      url: "assets/test1.mp4",
+      url: "assets/videos/test1.mp4",
       title: "Nature Video 1"
     },
     {
       id: 2,
-      url: "assets/test2.mp4",
+      url: "assets/videos/test2.mp4",
       title: "Nature Video 2"
     },
     {
       id: 3,
-      url: "assets/test3.mp4",
+      url: "assets/videos/test3.mp4",
       title: "Nature Video 3"
     }
   ]
@@ -454,7 +454,6 @@ const TestimonialsVideos = () => {
             >
               <video
                 ref={el => {
-                  // Properly handle the ref assignment
                   if (el) {
                     videoRefs.current[index] = el
                   }
