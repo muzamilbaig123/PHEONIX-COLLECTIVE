@@ -236,7 +236,6 @@ const MissionSection = ({ isActive }: { isActive: boolean }) => {
             src="/assets/mission.mp4"
             width={300}
             height={300}
-            autoPlay
             loop
             controls
             className="w-48 h-48 lg:w-96 lg:h-96 object-contain rounded-full border border-[#f3c60c] border-opacity-30"
