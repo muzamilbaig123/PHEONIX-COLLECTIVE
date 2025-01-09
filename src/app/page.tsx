@@ -24,6 +24,7 @@ import { useSwiperContext } from "@/utils/use-swiper-context";
 import IgniteSparksDonation from "@/components/pages/Ignite-Sparks";
 import Testimonials from "@/components/pages/testimonials";
 import RecurringDonations from "@/components/pages/Recurring-Donations";
+import TestimonialsVideos from "@/components/pages/testimonialsVideos";
 
 const Home: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperInstance | null>(
@@ -319,6 +320,19 @@ const Home: React.FC = () => {
                     setActiveContent(content);
                     setIsModalOpen(false);
                   }}
+                />
+              </SwiperSlide>
+
+              
+              {/* testimonials videos */}
+
+              <SwiperSlide style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <TestimonialsVideos
+                  // isCoreActive={isCoreValuesActive}
+                  // onCardClick={(content) => {
+                  //   setActiveContent(content);
+                  //   setIsModalOpen(false);
+                  // }}
                 />
               </SwiperSlide>
 
