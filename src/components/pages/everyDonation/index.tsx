@@ -63,7 +63,7 @@ const EveryDonationRipple = ({
   return (
     <div
       ref={swiperContainerRef}
-      className="w-full h-auto flex flex-col items-center justify-center px-4 py-12 bg-cover bg-center bg-fixed"
+      className="w-full h-auto flex flex-col items-center justify-center px-4 py-0 bg-cover bg-center bg-fixed"
       style={{ backgroundImage: "url('/assets/background.jpg')" }}
     >
       {/* <h1

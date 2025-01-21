@@ -25,6 +25,7 @@ import IgniteSparksDonation from "@/components/pages/Ignite-Sparks";
 import Testimonials from "@/components/pages/testimonials";
 import RecurringDonations from "@/components/pages/Recurring-Donations";
 import TestimonialsVideos from "@/components/pages/testimonialsVideos";
+// import NewDonationModal from "@/components/common/new-donation-modal";
 
 const Home: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperInstance | null>(
@@ -344,7 +345,6 @@ const Home: React.FC = () => {
                   navigateToSlide={handleCustomNavigation}
                 />
               </SwiperSlide>
-
 
             </Swiper>
 

@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import ChooseMonthlyGifts from "../pages/chooseMonthlyGifts";
 import EmpowerGrowth from "../pages/Empower-Growth";
+import Link from "next/link";
 
 interface DonationModalProps {
   isOpen: boolean;
@@ -82,7 +83,7 @@ const RecurringDonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose 
          Why Join the Circle of Givers of Light?
         </h2>
 
-        <div className="flex mb-6 bg-gray-200 px-1 py-1 rounded-full">
+        <div className="flex mb-12 bg-gray-200 px-1 py-1 rounded-full">
           <button
             onClick={() => setIsIndividual(true)}
             className={`px-4 py-2 rounded-full ${isIndividual ? "bg-[#202020] text-white" : "bg-gray-200"}`}
@@ -97,7 +98,14 @@ const RecurringDonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose 
           Empower Growth
           </button>
         </div>
-
+    <div>
+    <Link
+          href={"https://www.paypal.com/donate/?hosted_button_id=JRYWBGT8TH4Q2"}
+          className="mt-8 px-8 py-4 bg-yellow-400 text-black text-xl font-bold rounded-full hover:bg-yellow-300 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg"
+        >
+          DONATE NOW
+        </Link>
+    </div>
         {isIndividual ? (
           <ChooseMonthlyGifts
             isCoreActive={false}

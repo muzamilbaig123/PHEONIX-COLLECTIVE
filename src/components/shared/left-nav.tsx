@@ -4,8 +4,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import WriteLetterModal from "../common/write-letter-modal";
 import RequestAssistanceModal from "../common/request-assistance-modal";
-import DonationModal from "../common/donation-modals";
+// import DonationModal from "../common/donation-modals";
 import Link from "next/link";
+import NewDonationModal from "../common/new-donation-modal";
 
 // interface LeftNavProps {
 //   links: { label: string; href: string; action?: () => void }[];
@@ -77,7 +78,7 @@ const LeftNav = () => {
 
       {/* Modals */}
       <WriteLetterModal isOpen={isLetterModalOpen} onClose={closeModal} />
-      <DonationModal
+      <NewDonationModal
         isOpen={isDonationModalOpen}
         onClose={closeDonationModal}
       />

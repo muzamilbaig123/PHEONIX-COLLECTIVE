@@ -9,9 +9,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import WriteLetterModal from "../common/write-letter-modal";
 import RequestAssistanceModal from "../common/request-assistance-modal";
-import DonationModal from "../common/donation-modals";
+// import DonationModal from "../common/donation-modals";
 import { usePathname, useRouter } from "next/navigation";
 import { useSwiperContext } from "@/utils/use-swiper-context";
+import NewDonationModal from "../common/new-donation-modal";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -255,7 +256,7 @@ const Navbar = () => {
       </div>
 
       <WriteLetterModal isOpen={isLetterModalOpen} onClose={closeModal} />
-      <DonationModal
+      <NewDonationModal
         isOpen={isDonationModalOpen}
         onClose={closeDonationModal}
       />
@@ -268,3 +269,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
